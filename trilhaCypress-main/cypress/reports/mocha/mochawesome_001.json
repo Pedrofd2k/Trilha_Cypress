@@ -1,0 +1,131 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-04-20T14:22:56.009Z",
+    "end": "2023-04-20T14:22:57.643Z",
+    "duration": 1634,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fccadbda-4738-4ba5-96c1-6b84f7b0d49c",
+      "title": "",
+      "fullFile": "cypress/integration/2.login.spec.js",
+      "file": "cypress/integration/2.login.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "18a6a1a9-8b6e-41e1-aebc-c527e5ed90c3",
+          "title": "Casos de teste sobre a rota /login da API Serverest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve realizar login com sucesso",
+              "fullTitle": "Casos de teste sobre a rota /login da API Serverest Deve realizar login com sucesso",
+              "timedOut": null,
+              "duration": 707,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverest.default.buscarUsuarioParaLogin();\ncy.get('@usuarioLogin').then(usuario => {\n  _serverest.default.logar(usuario).then(res => {\n    _validaServerest.default.validarLoginComSucesso(res);\n    _serverest.default.salvarBearer(res);\n  });\n});",
+              "err": {},
+              "uuid": "9d1946ca-0512-43ec-9c5c-b7d468db5147",
+              "parentUUID": "18a6a1a9-8b6e-41e1-aebc-c527e5ed90c3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve realizar login sem sucesso",
+              "fullTitle": "Casos de teste sobre a rota /login da API Serverest Deve realizar login sem sucesso",
+              "timedOut": null,
+              "duration": 766,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_serverest.default.logarUsuarioFalso().then(res => {\n  cy.contractValidation(res, '1.login', 400);\n  _validaServerest.default.validarLoginSemSucesso(res);\n});",
+              "err": {
+                "message": "AssertionError: expected 401 to equal 400",
+                "estack": "AssertionError: expected 401 to equal 400\n    at Function.validarLoginSemSucesso (https://serverest.dev/__cypress/tests?p=cypress\\integration\\2.login.spec.js:400:32)\n    at Context.eval (https://serverest.dev/__cypress/tests?p=cypress\\integration\\2.login.spec.js:196:32)",
+                "diff": "- 401\n+ 400\n"
+              },
+              "uuid": "324c70ac-9a28-47f0-89d7-b1e7b291ee54",
+              "parentUUID": "18a6a1a9-8b6e-41e1-aebc-c527e5ed90c3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9d1946ca-0512-43ec-9c5c-b7d468db5147"
+          ],
+          "failures": [
+            "324c70ac-9a28-47f0-89d7-b1e7b291ee54"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1473,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
